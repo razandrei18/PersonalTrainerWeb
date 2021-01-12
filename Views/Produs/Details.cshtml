@@ -1,0 +1,36 @@
+﻿@model PersonalTrainerWeb.Models.Produs
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detalii produs</h3>
+
+<div>
+    <h4>Produs</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Denumire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pret)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pret)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supliment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supliment.Denumire)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Modificare</a> |
+    <a asp-action="Index">Inapoi</a>
+</div>

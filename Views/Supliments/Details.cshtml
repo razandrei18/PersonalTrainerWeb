@@ -1,0 +1,36 @@
+﻿@model PersonalTrainerWeb.Models.Supliment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3 style="text-align:center">Detalii supliment</h3>
+
+<div>
+    <h5>Supliment</h5>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Denumire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cantitate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cantitate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editare</a> |
+    <a asp-action="Index">Inapoi</a>
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PersonalTrainerWeb.Models.Produs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 style="text-align:center">Produse (Antrenamente/Planuri alimentatie)</h3>
+
+<p>
+    <a asp-action="Create">Adaugare produse</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supliment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supliment.Denumire)
+            </td>
+            @if (User.Identity.Name == "razvanioan.andrei22@gmail.com")
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Modificare</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalii</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Stergere</a>
+                </td>
+            }
+            </tr>
+}
+    </tbody>
+</table>

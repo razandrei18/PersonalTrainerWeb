@@ -1,0 +1,56 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+<div class="row">
+    <div class="col-md-4" style="margin:0 auto">
+        <section style="border:2px solid cyan; border-radius: 6px; padding: 10px; background-image: linear-gradient(#5eccc6, #0783eb)">
+            <h1 style="text-align:center; color:white">@ViewData["Title"]</h1>
+            <form id="account" method="post">
+                <h4 style="text-align:center; color:white">Utilizati un cont activ pentru logare</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label style="color:white" asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color:white" asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label style="color:white" asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="background-color:#5eccc6">Log in</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a style="color:white" id="forgot-password" asp-page="./ForgotPassword">Ati uitat parola?</a>
+                    </p>
+                    <p>
+                        <a style="color:white" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Inregistrare</a>
+                    </p>
+                    <p>
+                        <a style="color:white" id="resend-confirmation" asp-page="./ResendEmailConfirmation">Retrimitere confirmare</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

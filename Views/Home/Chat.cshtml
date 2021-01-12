@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h1 style="text-align:center">@ViewData["Title"]</h1>
+<p>Aici puteti lua legatura cu trainer-ul/clientul dvs.</p>
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <span class="col-1">Mesajul dvs.</span>
+        <span class="col-6"><input type="text" id="messageInput" /></span>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Trimite" class="btn btn-primary" style="background-color:#5eccc6"/>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6" style="margin:0 auto; border:2px solid cyan; border-radius: 6px; padding: 10px;  background-image: linear-gradient(#5eccc6, #0783eb); overflow-y: scroll; height:400px;">
+        <ul style="list-style: none;" id="messagesList"></ul>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

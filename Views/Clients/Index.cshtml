@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PersonalTrainerWeb.Models.Client>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 style="text-align:center">Clienti activi in prezent:</h3>
+
+<p>
+    <a asp-action="Create">Adaugare client</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Varsta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Greutate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Varsta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Greutate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produs.Denumire)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Modificare date personale</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Detalii Client</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Sterge clientul</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

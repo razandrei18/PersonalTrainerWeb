@@ -1,0 +1,54 @@
+﻿@model PersonalTrainerWeb.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detalii client</h3>
+
+<div>
+    <h5>Client</h5>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenume)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prenume)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Varsta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Varsta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Greutate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Greutate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produs.Denumire)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Modificare</a> |
+    <a asp-action="Index">Inapoi</a>
+</div>
